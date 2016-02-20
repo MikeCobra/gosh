@@ -19,10 +19,12 @@ func main() {
 			fmt.Printf("exit\n")
 			os.Exit(0)
 		}
-		command := strings.Split(strings.TrimSpace(text), " ")[0]
+		tokens := strings.Split(strings.TrimSpace(text), " ")
+		command := tokens[0]
+		arguments := tokens[1:]
 		if len(command) > 0 {
 			command = LocateCommand(command, config.Path)
-			RunCommand(command)
+			RunCommand(command, arguments...)
 		}
 	}
 }
