@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Printf("I am gosh!\n")
+	config := LoadConfig()
+
+	fmt.Printf("#%v", config)
 }
