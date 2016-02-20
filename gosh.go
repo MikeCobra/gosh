@@ -21,7 +21,8 @@ func main() {
 		}
 		command := strings.Split(strings.TrimSpace(text), " ")[0]
 		if len(command) > 0 {
-			fmt.Printf("%s\n", LocateCommand(command, config.Path))
+			command = LocateCommand(command, config.Path)
+			RunCommand(command)
 		}
 	}
 }
