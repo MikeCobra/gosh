@@ -7,5 +7,5 @@ import (
 func main() {
 	config := LoadConfig()
 
-	fmt.Printf("#%v", config)
+	fmt.Printf(LocateCommand("ls", config.Path))
 }
