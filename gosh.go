@@ -16,9 +16,12 @@ func main() {
 		fmt.Print("> ")
 		text, err := reader.ReadString('\n')
 		if err == io.EOF {
+			fmt.Printf("exit\n")
 			os.Exit(0)
 		}
 		command := strings.Split(strings.TrimSpace(text), " ")[0]
-		fmt.Printf("%s\n", LocateCommand(command, config.Path))
+		if len(command) > 0 {
+			fmt.Printf("%s\n", LocateCommand(command, config.Path))
+		}
 	}
 }
